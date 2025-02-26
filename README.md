@@ -51,6 +51,19 @@
   - $23,328 to Victory Solutions (5%)
   - $9,501 to WAB Holdings, LLC (2%)
 
+## Fight for Austin
+- Victory Solutions was the largest expense for Fight for Austin, at $122,858. [[year crosstab](data/fight_for_austin_expenses.csv)][[itemised](data/fight_for_austin_expenses_raw.csv)]
+
+
+## Save Austin Now
+- The PAC Spent $4,096,772 [[year crosstab](data/save_austin_now_expenses.csv)][[itemised](data/save_austin_now_expenses_raw.csv)]
+  - Paid $1,340,836 to WAB Holdings, LLC (33%)
+  - Paid $71,776 to Potomac Strategies (2%)
+  - Paid $51,909 to GoodBuzz Solutions (1%)
+  - Paid $12,122 to Matt Mackowiak directly (0.3%)
+  - Paid $3,425 to Lauren Day directly (0.08%)
+  - Paid $82,848 to Accelevate2020 (2%)
+
 ## About the Vendors
 ### GoodBuzz Solutions
 - [Lauren Day](https://www.linkedin.com/in/laurenhartday/) is the main person there.
@@ -92,3 +105,14 @@
       - A co-founder of Save Austin Now. 
       - Treasurer for Fight for Tomorrow PAC. 
       - A Republican Party executive in Texas.
+
+
+## Weird Vendors for MacKenzie Kelly's Races
+
+### PinPoint Action, LLC
+- Kelly's campaign paid $130,105 in 2020.
+- Owner is 'Michael Shirley', who's LinkedIn is [empty](https://www.linkedin.com/in/mikecshirley/).
+- The LLC is no longer active in Florida. [source](https://www.flcompanyregistry.com/companies/pinpoint-action-llc/)
+- WebArchive has a capture of the former [website](https://web.archive.org/web/20190417011050/https://www.pinpointaction.com/)
+- Last post on X was December 2020, congratulating Kelly for her win. [source](https://x.com/pinpointaction)
+- PinPoint Action and Potomac Strategies were the two largest expeses for MacKenzie Kelly's campaigns.
