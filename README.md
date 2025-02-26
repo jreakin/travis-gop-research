@@ -51,11 +51,11 @@
   - $23,328 to Victory Solutions (5%)
   - $9,501 to WAB Holdings, LLC (2%)
 
-## Fight for Austin
+### Fight for Austin
 - Victory Solutions was the largest expense for Fight for Austin, at $122,858. [[year crosstab](data/fight_for_austin_expenses.csv)][[itemised](data/fight_for_austin_expenses_raw.csv)]
 
 
-## Save Austin Now
+### Save Austin Now
 - The PAC Spent $4,096,772 [[year crosstab](data/save_austin_now_expenses.csv)][[itemised](data/save_austin_now_expenses_raw.csv)]
   - Paid $1,340,836 to WAB Holdings, LLC (33%)
   - Paid $71,776 to Potomac Strategies (2%)
@@ -105,9 +105,6 @@
       - A co-founder of Save Austin Now. 
       - Treasurer for Fight for Tomorrow PAC. 
       - A Republican Party executive in Texas.
-
-
-## Weird Vendors for MacKenzie Kelly's Races
 
 ### PinPoint Action, LLC
 - Kelly's campaign paid $130,105 in 2020.
