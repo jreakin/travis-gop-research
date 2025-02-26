@@ -35,6 +35,16 @@ tec_ct = pd.crosstab(
     margins_name='Total',
 ).sort_values(by='Total', ascending=False)
 
+mackowiak_ct = pd.crosstab(
+    index=[mackowiak_frame['payeeNameOrganization'], mackowiak_frame['filerName']],
+    columns=mackowiak_frame['expendDt'].dt.year,
+    values=mackowiak_frame['expendAmount'].astype(float),
+    aggfunc='sum',
+    margins=True,
+    margins_name='Total',
+).sort_values(by='Total', ascending=False)
+
+
 print("Total Expenses: ", tec_beyond2018['expendAmount'].astype(float).sum())
 print("Expenses paid to Mackowiak Entities: ", mackowiak_frame['expendAmount'].astype(float).sum())
 
@@ -87,6 +97,17 @@ keep_round_rock_expense_ct = pd.crosstab(
     margins_name='Total',
 ).sort_values(by='Total', ascending=False)
 
+keep_round_rock_safe_payroll = keep_round_rock_safe_expenses[keep_round_rock_safe_expenses['payeeNameOrganization'].isna()]
+
+keep_round_rock_safe_payroll_ct = pd.crosstab(
+    index=[keep_round_rock_safe_payroll['payeeNameFirst'], keep_round_rock_safe_payroll['payeeNameLast']],
+    columns=keep_round_rock_safe_payroll['expendDt'].dt.year,
+    values=keep_round_rock_safe_payroll['expendAmount'].astype(float),
+    aggfunc='sum',
+    margins=True,
+    margins_name='Total',
+).sort_values(by='Total', ascending=False)
+
 # Fight for Tomorrow
 fight_for_tomorrow_contributors = set_datetime(tec_contributions.filter(
     pl.col('filerName').str.contains('Fight for Tomorrow')
@@ -105,6 +126,8 @@ fight_for_tomorrow_expense_ct = pd.crosstab(
     margins_name='Total',
 ).sort_values(by='Total', ascending=False)
 
+fight_for_tomorrow_payroll = fight_for_tomorrow_expenses[fight_for_tomorrow_expenses['payeeNameOrganization'].isna()]
+
 # Travis County Republican Party (CEC)
 travis_cec_contributions = set_datetime(tec_contributions.filter(
     pl.col('filerIdent').str.contains("00039023")
@@ -120,6 +143,17 @@ travis_cec_expense_ct = pd.crosstab(
     index=[travis_cec_expenses['payeeNameOrganization']],
     columns=travis_cec_expenses['expendDt'].dt.year,
     values=travis_cec_expenses['expendAmount'].astype(float),
+    aggfunc='sum',
+    margins=True,
+    margins_name='Total',
+).sort_values(by='Total', ascending=False)
+
+travis_cec_payroll = travis_cec_expenses[travis_cec_expenses['payeeNameOrganization'].isna()]
+
+travis_cec_payroll_ct = pd.crosstab(
+    index=[travis_cec_payroll['payeeNameFirst'], travis_cec_payroll['payeeNameLast']],
+    columns=travis_cec_payroll['expendDt'].dt.year,
+    values=travis_cec_payroll['expendAmount'].astype(float),
     aggfunc='sum',
     margins=True,
     margins_name='Total',

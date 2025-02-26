@@ -10,16 +10,16 @@
   - 2,155 records.
 
 ## TEC Research
-- Travis GOP Group Expenses Paid to **Mackowiak Entities/Allies**
+- Travis GOP Group Expenses Paid to **Mackowiak Entities/Allies** [[year crosstab](data/mackowiak_entities_payments.csv)]
   - Total: $119,910
     - GoodBuzz Solutions: $84,782 (71%)
     - Victory Solutions: $23,328 (19%)
-- PACs/Candidates Paying **Potomac Strategies**
+- PACs/Candidates Paying **Potomac Strategies** [[file](data/potomac_pac_payments.csv)]:
   - Total: $1,221,497
     - Keep Round Rock Safe: $480,000 (39%)
     - Fight for Tomorrow: $132,000 (11%)
     - Save Austin Now: $121,000 (10%)
-- PACs Paying WAB Holdings, LLC:
+- PACs Paying WAB Holdings, LLC [[year crosstab](data/wab_pac_payments.csv)][[itemised](data/wab_pac_payments_raw.csv)]:
   - Total: $1,757,446
     - Save Austin Now: $1,630,000 (93%)
     - Make Liberty Win: $96,729 (5%)
@@ -27,21 +27,25 @@
     - Travis County GOP: $9,501 (0.5%)
   
 ### Keep Round Rock Safe
-- Has one contributor, Texas Emergency Network, LLC" for $50,000.
+- Has one contributor, Texas Emergency Network, LLC" for $50,000. [[file](data/keep_round_rock_safe_contributors.csv)]
 - There is no street address for Texas Emergency Network, LLC -- only that it's in Austin, TX 78701.
 - The PAC has spent $486,743
   - $480,423 to Potomac Strategies (98%)
   - $6,320 to "Aleshire Law, PC"
+  - $34,422 paid to 4 people for
+  "Contract labor hours for petition canvassing and signature validation." [[file](data/keep_round_rock_safe_payroll.csv)]
+
 
 ### Fight for Tomorrow PAC
 - Contributor information
-- The PAC has spent $244,397
+- The PAC has spent $244,397 [[year crosstab](data/fight_for_tomorrow_expenses.csv)][[itemised](data/fight_for_tomorrow_expenses_raw.csv)]
   - $132,000 to Potomac Strategies (54%)
   - $20,000 to WAB Holdings, LLC (8%)
   - $3,067 to Victory Solutions (1.2%)
+  - $4,950 paid to Matt Mackowiak directly
 
 ### Travis County Republican Party (CEC)
-- The PAC has spent $473,418
+- The PAC has spent $473,418 [[year crosstab](data/travis_cec_expenses.csv)][[itemised](data/travis_cec_expenses_raw.csv)]
   - $72,157 to payroll using "PayChecks Inc."
   - $67,000 to GoodBuzz Solutions (14%)
   - $23,328 to Victory Solutions (5%)
