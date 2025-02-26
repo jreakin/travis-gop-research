@@ -72,6 +72,11 @@
 
 ### WAB Holdings, LLC
 - Was created by Mackowiak & Shannon Burns after the former employees of Victory Solutions started hunting Shannon Burns down to get their paychecks he stiffed them on.
+- Victory Solutions/Burns Court Cases:
+  - Real Good Technologies, LLC v. Victory Solutions, LLC [source](https://www.govinfo.gov/content/pkg/USCOURTS-ohnd-1_17-cv-00149/pdf/USCOURTS-ohnd-1_17-cv-00149-0.pdf)
+- Articles on Shannon Burns:
+  - A 2019 article from [The Daily Beast](https://www.thedailybeast.com/republican-telemarketer-shannon-burns-stiffed-the-feds-out-of-dollar411k-the-trump-white-house-gave-him-a-job/) reports Burns dodging creditors and facing lawsuits.
+  - A 2021 [Raw Story](https://www.rawstory.com/shannon-burns/) piece and a [Politico](https://www.politico.com/news/magazine/2021/09/24/shannon-burns-ohio-republican-strategist-profile-513622) profile detail over two dozen lawsuits against him and his companies, including evictions, bankruptcies, and back taxes totaling hundreds of thousands of dollars. These articles, published in 2019 and 2021, highlight a pattern of financial misconduct, with plaintiffs describing Burns as a "shyster" and "flimflam artist," suggesting a controversial reputation.
 - Reddit Posts:
   - [Prop A Funny Business](https://www.reddit.com/r/Austin/comments/q81mjg/prop_a_funny_business/)
     - Prior to Matt Mackowiak creating Save Austin Now, he had another PAC called Fight for Austin. Fight for Austin paid "Victory Solutions", a company owned by the same person, $122,858. 
