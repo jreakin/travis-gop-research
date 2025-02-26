@@ -1,0 +1,44 @@
+# Mackowiak Research Fields
+
+EXPORT_FIELDS = [
+    "recordType",
+    "formTypeCd",
+    "schedFormTypeCd",
+    "reportInfoIdent",
+    "receivedDt",
+    "filerIdent",
+    "filerTypeCd",
+    "filerName",
+    "expendInfoId",
+    "expendDt",
+    "expendAmount",
+    "expendDescr"
+]
+
+TRAVIS_GOP_POSSIBLE = [
+    "00043474",
+    "00015789",
+    "00023738",
+    "00057940",
+    "00015789",
+    "00039023",
+    "00015743",
+    "00057940",
+    "00017221",
+    "00058441",
+    "00039023",
+]
+
+
+MACKOWIAK_ENTITIES = [
+    "GoodBuzz Solutions, LLC",
+    "Victory Solutions",
+    "Goodbuzz Solutions",
+    "WAB Holdings LLC",
+    "Good Buzz Solutions",
+    "Potomac Strategy Group, LLC",
+    "Save Austin Now PAC",
+    "WAB Strategic",
+    "Save Austin Now",
+    "Mackowiak",
+]
