@@ -1,24 +1,13 @@
 import pandas as pd
 import polars as pl
-from __init__ import CONFIG
 from tec_research import (
-    tec_expenses, tec_contributions,
-    tec_tcrp, potomac_frame,
-    wab_frame, tec_beyond2018,
-    mackowiak_frame, tec_ct, potomac_ct, wab_ct,
-    keep_round_rock_safe_contributors, texas_emergency_network, keep_round_rock_safe_expenses,
-    keep_round_rock_expense_ct, fight_for_tomorrow_contributors,
-    fight_for_tomorrow_expenses, fight_for_tomorrow_expense_ct, travis_cec_expenses, travis_cec_contributions,
-    travis_cec_expense_ct, keep_round_rock_safe_payroll_ct, travis_cec_payroll_ct, travis_cec_payroll, mackowiak_ct,
-    potomac_all_years
+    tec_expenses, tec_contributions,potomac_frame, wab_frame, potomac_ct, wab_ct,
+    keep_round_rock_safe_contributors, fight_for_tomorrow_expenses, fight_for_tomorrow_expense_ct, travis_cec_expenses,
+    travis_cec_expense_ct, keep_round_rock_safe_payroll_ct, travis_cec_payroll_ct, mackowiak_ct, potomac_all_years
 )
-from fec_research import (
-    travis_county_fec_contributions,
-    make_liberty_win_fec_contributions,
-    travis_county_fec_contributions_ct
-)
-from austin_finance import atx_df, atx_ct, fight_for_austin_ct, fight_for_austin_df, save_austin_now_ct, save_austin_now_df
+from austin_finance import fight_for_austin_ct, fight_for_austin_df, save_austin_now_ct, save_austin_now_df
 
+# Amount Made Before/After 2018
 before2018_cols = [col for col in potomac_all_years.columns if isinstance(col, int) and col < 2018]
 after2018_cols = [col for col in potomac_all_years.columns if isinstance(col, int) and col >= 2018]
 before2018_frame = potomac_all_years.loc[:, before2018_cols]
@@ -32,13 +21,10 @@ avg_after2018 = total_after2018 / len(after2018_cols)
 potomac_frame['expendDt'] = pd.to_datetime(potomac_frame['expendDt'], format='%Y%m%d')
 potomac_frame = potomac_frame[potomac_frame['expendDt'] > '2018-01-01']
 
-
-
 make_liberty_win_expenses = tec_expenses.filter(pl.col('filerName').str.contains('Make Liberty Win')).collect().to_pandas()
 make_liberty_win_contributions = tec_contributions.filter(pl.col('filerName').str.contains('Make Liberty Win')).collect().to_pandas()
 
-
-
+# Exports
 keep_round_rock_safe_payroll_ct.to_csv('data/keep_round_rock_safe_payroll.csv')
 travis_cec_payroll_ct.to_csv('data/travis_cec_payroll.csv')
 wab_ct.to_csv('data/wab_pac_payments.csv')

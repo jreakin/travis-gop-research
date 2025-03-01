@@ -57,34 +57,33 @@ TECPayrollCrosstab = CreateCrosstab(
     column_fields= 'expendDt',
     amount_field= 'expendAmount'
 )
-tec_ct = TECExpenseCrosstab.create(tec_beyond2018)
+tec_ct = TECExpenseCrosstab.create(tec_beyond2018)  # TCRP Expenses 2018+
 
-mackowiak_ct = TECExpenseCrosstab.create(mackowiak_frame)
+mackowiak_ct = TECExpenseCrosstab.create(mackowiak_frame) # Mackowiak Entities
 
-potomac_all_years = TECExpenseCrosstab.create(potomac_frame_raw)
+potomac_all_years = TECExpenseCrosstab.create(potomac_frame_raw) # Potomac Expenses All Years
 
-potomac_ct = TECExpenseCrosstab.create(potomac_frame)
+potomac_ct = TECExpenseCrosstab.create(potomac_frame) # Potomac Expenses 2018+
 
-wab_ct = TECExpenseCrosstab.create(wab_frame)
+wab_ct = TECExpenseCrosstab.create(wab_frame) # WAB PAC Payments
 
 keep_round_rock_safe_contributors = tec_contributions.filter(
     pl.col('filerName').str.contains('Keep Round Rock Safe')
-).collect().to_pandas()
+).collect().to_pandas() # Keep Round Rock Safe Contributors
 
-# Only one contributor, Texas Emergency Network, LLC
 texas_emergency_network = tec_contributions.filter(
     pl.col('contributorNameOrganization').str.contains('Texas Emergency Network')
-).collect().to_pandas()
+).collect().to_pandas()  # Texas Emergency Network, LLC
 
 keep_round_rock_safe_expenses = set_datetime(tec_expenses.filter(
     pl.col('filerName').str.contains('Keep Round Rock Safe')
-).collect().to_pandas())
+).collect().to_pandas())  # Keep Round Rock Safe Expenses
 
-keep_round_rock_expense_ct = TECExpenseCrosstab.create(keep_round_rock_safe_expenses)
+keep_round_rock_expense_ct = TECExpenseCrosstab.create(keep_round_rock_safe_expenses) # Keep Round Rock Safe Expenses
 
-keep_round_rock_safe_payroll = keep_round_rock_safe_expenses[keep_round_rock_safe_expenses['payeeNameOrganization'].isna()]
+keep_round_rock_safe_payroll = keep_round_rock_safe_expenses[keep_round_rock_safe_expenses['payeeNameOrganization'].isna()]  # Keep Round Rock Safe Payroll
 
-keep_round_rock_safe_payroll_ct = TECPayrollCrosstab.create(keep_round_rock_safe_payroll)
+keep_round_rock_safe_payroll_ct = TECPayrollCrosstab.create(keep_round_rock_safe_payroll)  # Keep Round Rock Safe Payroll
 
 # Fight for Tomorrow
 fight_for_tomorrow_contributors = set_datetime(
@@ -93,7 +92,7 @@ fight_for_tomorrow_contributors = set_datetime(
     .collect()
     .to_pandas(),
     'contributionDt'
-)
+)  # Fight for Tomorrow Contributors
 
 fight_for_tomorrow_expenses = set_datetime(
     tec_expenses.filter(
@@ -101,11 +100,11 @@ fight_for_tomorrow_expenses = set_datetime(
     )
     .collect()
     .to_pandas()
-)
+)  # Fight for Tomorrow Expenses
 
-fight_for_tomorrow_expense_ct = TECExpenseCrosstab.create(fight_for_tomorrow_expenses)
+fight_for_tomorrow_expense_ct = TECExpenseCrosstab.create(fight_for_tomorrow_expenses)  # Fight for Tomorrow Expense Crosstab
 
-fight_for_tomorrow_payroll = fight_for_tomorrow_expenses[fight_for_tomorrow_expenses['payeeNameOrganization'].isna()]
+fight_for_tomorrow_payroll = fight_for_tomorrow_expenses[fight_for_tomorrow_expenses['payeeNameOrganization'].isna()]  # Fight for Tomorrow Payroll
 
 # Travis County Republican Party (CEC)
 travis_cec_contributions = set_datetime(
@@ -115,7 +114,7 @@ travis_cec_contributions = set_datetime(
     .collect()
     .to_pandas(),
     'contributionDt'
-)
+)  # Travis County Republican Party Contributions
 travis_cec_contributions = travis_cec_contributions[travis_cec_contributions['contributionDt'] > '2018-01-01']
 
 travis_cec_expenses = set_datetime(
@@ -124,11 +123,11 @@ travis_cec_expenses = set_datetime(
     )
     .collect()
     .to_pandas()
-)
-travis_cec_expenses = travis_cec_expenses[travis_cec_expenses['expendDt'] > '2018-01-01']
+)  # Travis County Republican Party Expenses
+travis_cec_expenses = travis_cec_expenses[travis_cec_expenses['expendDt'] > '2018-01-01']  # Travis County Republican Party Expenses 2018+
 
-travis_cec_expense_ct = TECExpenseCrosstab.create(travis_cec_expenses)
+travis_cec_expense_ct = TECExpenseCrosstab.create(travis_cec_expenses) # Travis County Republican Party Expenses Crosstab
 
-travis_cec_payroll = travis_cec_expenses[travis_cec_expenses['payeeNameOrganization'].isna()]
+travis_cec_payroll = travis_cec_expenses[travis_cec_expenses['payeeNameOrganization'].isna()]  # Travis County Republican Party Payroll
 
-travis_cec_payroll_ct = TECPayrollCrosstab.create(travis_cec_payroll)
+travis_cec_payroll_ct = TECPayrollCrosstab.create(travis_cec_payroll)  # Travis County Republican Party Payroll
