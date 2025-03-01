@@ -1,5 +1,9 @@
+from __future__ import annotations
 import tomli
 import pandas as pd
+from dataclasses import dataclass
+from typing import ClassVar
+from functools import partial
 
 CONFIG = tomli.load(open("config.toml", 'rb'))
 
@@ -19,3 +23,43 @@ def change_non_ints_to_string(func):
 def set_datetime(df: pd.DataFrame, col: str = 'expendDt', fmt: str = '%Y%m%d') -> pd.DataFrame:
     df[col] = pd.to_datetime(df[col], format=fmt)
     return df
+
+@dataclass
+class CreateCrosstab:
+    index_fields: list | str
+    column_fields: list | str
+    amount_field: str
+
+    @staticmethod
+    def _round_floats(func):
+        def wrapper(*args, **kwargs):
+            df: pd.DataFrame = func(*args, **kwargs)
+            for col in df.columns:
+                if df[col].dtype == 'float64':
+                    df[col] = df[col].round(2)
+            return df
+        return wrapper
+
+    @_round_floats
+    def create(self, df: pd.DataFrame):
+        ct = partial(pd.crosstab, aggfunc='sum', margins=True, margins_name='Total')
+        if isinstance(self.index_fields, str):
+            _index_fields = partial(ct, index=df[self.index_fields])
+        elif isinstance(self.index_fields, list):
+            _index_fields = partial(ct, index=[df[x] for x in self.index_fields])
+        else:
+            raise ValueError("index_fields must be a list or string")
+
+        if isinstance(self.column_fields, str):
+            _column_fields = partial(_index_fields, columns=df[self.column_fields].dt.year)
+        elif isinstance(self.column_fields, list):
+            _column_fields = partial(_index_fields, columns=[df[x] for x in self.column_fields])
+        else:
+            raise ValueError("column_fields must be a list or string")
+
+        return _column_fields(
+            values=df[self.amount_field].astype(float).round(2)
+        ).sort_values(
+            by='Total',
+            ascending=False
+        )
