@@ -20,7 +20,7 @@
     - Fight for Tomorrow: $132,000 (11%)
     - Save Austin Now: $121,000 (10%)
   - Potomac Revenue Before 2018
-    - Prior to 2018, Potomac Strategies was paid a total of $115,042 across ==all== clients between 2012 and 2017.
+    - Prior to 2018, Potomac Strategies was paid a total of $115,042 across **all** clients between 2012 and 2017.
     - Average annual revenue was $19,174.
   - Potomac Revenue 2018 and beyond
     - Potomac Strategies was paid $1,221,480 between 2018 and 2024, a percentage increase of 960%.
