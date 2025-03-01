@@ -19,6 +19,12 @@
     - Keep Round Rock Safe: $480,000 (39%)
     - Fight for Tomorrow: $132,000 (11%)
     - Save Austin Now: $121,000 (10%)
+  - Potomac Revenue Before 2018
+    - Prior to 2018, Potomac Strategies was paid a total of $115,042 across ==all== clients between 2012 and 2017.
+    - Average annual revenue was $19,174.
+  - Potomac Revenue 2018 and beyond
+    - Potomac Strategies was paid $1,221,480 between 2018 and 2024, a percentage increase of 960%.
+    - Average annual revenue was $174,497, a percentage increase of 810%.
 - PACs Paying WAB Holdings, LLC [[year crosstab](data/wab_pac_payments.csv)][[itemised](data/wab_pac_payments_raw.csv)]:
   - Total: $1,757,446
     - Save Austin Now: $1,630,000 (93%)

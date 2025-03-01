@@ -15,12 +15,12 @@ tec_expenses = pl.scan_parquet(tec_expenses_path)
 tec_tcrp = set_datetime(tec_expenses.filter(
     (pl.col('filerIdent').is_in(CONFIG['TRAVIS_GOP_POSSIBLE']))
 ).collect().to_pandas())
-potomac_frame = set_datetime(tec_expenses.filter(pl.col('payeeNameOrganization').str.contains('Potomac')).collect().to_pandas())
+potomac_frame_raw = set_datetime(tec_expenses.filter(pl.col('payeeNameOrganization').str.contains('Potomac')).collect().to_pandas())
 wab_frame = set_datetime(tec_expenses.filter(pl.col('payeeNameOrganization').str.starts_with('WAB ')).collect().to_pandas())
 
 """ Filter Data """
 tec_beyond2018 = tec_tcrp[tec_tcrp['expendDt'] > '2018-01-01']
-potomac_frame = potomac_frame[potomac_frame['expendDt'] > '2018-01-01']
+potomac_frame = potomac_frame_raw[potomac_frame_raw['expendDt'] > '2018-01-01']
 wab_frame = wab_frame[wab_frame['expendDt'] > '2018-01-01']
 mackowiak_frame = tec_beyond2018[tec_beyond2018['payeeNameOrganization'].isin(CONFIG['MACKOWIAK_ENTITIES'])]
 
@@ -48,6 +48,14 @@ mackowiak_ct = pd.crosstab(
 print("Total Expenses: ", tec_beyond2018['expendAmount'].astype(float).sum())
 print("Expenses paid to Mackowiak Entities: ", mackowiak_frame['expendAmount'].astype(float).sum())
 
+potomac_all_years = pd.crosstab(
+    index=[potomac_frame_raw['filerName'], potomac_frame_raw['payeeNameOrganization']],
+    columns=potomac_frame_raw['expendDt'].dt.year,
+    values=potomac_frame_raw['expendAmount'].astype(float),
+    aggfunc='sum',
+    margins=True,
+    margins_name='Total',
+)
 
 potomac_ct = pd.crosstab(
     index=[potomac_frame['filerName'], potomac_frame['payeeNameOrganization']],
