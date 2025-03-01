@@ -1,0 +1,27 @@
+[project]
+name = "travis-gop-research"
+version = "0.1.0"
+description = "Researching Travis County GOP Financials, February 2025"
+readme = "README.md"
+requires-python = ">=3.12.8"
+
+dependencies = [
+    "bs4>=0.0.2",
+    "httpx>=0.28.1",
+    "ipykernel>=6.29.5",
+    "ipython>=8.31.0",
+    "jupyter-contrib-nbextensions>=0.7.0",
+    "jupyter-nbextensions-configurator>=0.6.4",
+    "marimo[recommended]>=0.10.9",
+    "matplotlib>=3.10.0",
+    "notebook>=7.3.2",
+    "pandas>=2.2.3",
+    "polars>=1.19.0",
+    "pyarrow>=19.0.1",
+    "pydantic>=2.10.4",
+    "rich>=13.9.4",
+    "seaborn>=0.13.2",
+    "selenium>=4.29.0",
+    "tabulate>=0.9.0",
+    "tomli>=2.2.1",
+]
