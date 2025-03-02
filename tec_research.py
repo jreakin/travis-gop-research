@@ -10,6 +10,7 @@ tec_contributions_path = Path(__file__).parents[4] / 'campaignfinance/tmp/texas/
 """ === Load Data === """
 tec_contributions = pl.scan_parquet(tec_contributions_path)
 tec_expenses = pl.scan_parquet(tec_expenses_path)
+tec_expenses = tec_expenses.with_columns([pl.col('expendDt').str.strptime(pl.Date, '%Y%m%d')])
 
 """ === Data Frames === """
 tec_tcrp = set_datetime(
